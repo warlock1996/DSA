@@ -8,15 +8,15 @@ class Node {
 
 const input = [15, 25, 10, 7, 22, 17, 13, 5, 9, 27, 30]
 //				0,  1,  2, 3,  4,  5,  6, 7, 8,  9, 10
-//                   15
-//                 /    \
-//               10      25
-//              / \     /  \
-//             7  13   22   27
-//            / \     /      \
-//           5   9   17    	  30
+//                    15
+//                  /    \
+//                 10     25
+//                / \    /  \
+//               7  13  22   27
+//              / \     /      \
+//             5   9   17      30
 
-/* 		rough work
+/* 	
 callstack: (15, 17), (25, 17), (22, 17), (17, 17)
 */
 
@@ -26,6 +26,7 @@ class BinarySearchTree {
 		this.root = this.values[0]
 		// which is essentially an array under the hood
 	}
+
 	constructBinarySearchTree(values) {
 		const nodes = this.createNodes(values)
 		let root = nodes[0]
@@ -35,6 +36,7 @@ class BinarySearchTree {
 		// console.log(nodes)
 		return nodes
 	}
+
 	createNodes(values) {
 		const nodesArray = []
 		for (let i = 0; i < values.length; i++) {
@@ -42,6 +44,7 @@ class BinarySearchTree {
 		}
 		return nodesArray
 	}
+
 	insertNode(root, node) {
 		if (root === null) return true
 
@@ -173,6 +176,7 @@ class BinarySearchTree {
 		if (node.left === null) return node
 		return this.findSmallestInRST(node.left)
 	}
+
 	findLargestInLST(node) {
 		if (node.right === null) return node
 		return this.findLargestInLST(node.right)
@@ -183,3 +187,5 @@ const bst = new BinarySearchTree(input)
 // console.log(bst.values)
 // console.log(bst.removeNode(15))
 console.log(bst.breadthFirstSearch(bst.root))
+
+module.exports = BinarySearchTree

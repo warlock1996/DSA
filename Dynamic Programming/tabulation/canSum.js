@@ -9,8 +9,7 @@ const canSum = (targetSum, numbers) => {
 			}
 		}
 	}
-
-	console.log(table.length)
+	console.log(table)
 	return table[targetSum]
 }
 
@@ -26,4 +25,6 @@ const canSum = (targetSum, numbers) => {
 // 3 + 3 = 6
 // 3 + 6 = 9
 
-console.log(canSum(6, [2, 3, 6]))
+console.log(canSum(7, [2, 3]))
+console.log(canSum(7, [5, 3, 4, 7]))
+console.log(canSum(300, [2, 4]))
